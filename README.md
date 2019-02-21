@@ -11,7 +11,7 @@ Documentation is provided in code comments
 
 ## Dataset 1.
 
-A visialization of the data provided:
+A visualization of the data provided:
 
 <p align="center">
   <img width="350"  src="./figures/Figureinitial.png">
@@ -21,7 +21,7 @@ A visialization of the data provided:
 iterations = 100
 learn_rate = 0.01
 ```
-With the above parameters and using gradient descent of the MeanSquareError cost function. We obtained the following (log) cost curve that found the minima quickly. Resulting in the following output line
+With the above parameters and using gradient descent of the MeanSquareError cost function. We obtained the following (log) cost curve. After running this descent algorithm we found the minima quickly. Resulting in the following output line.
 
 <p align="center">
   <img width="350"  src="./figures/firstcost.png">
@@ -30,7 +30,7 @@ With the above parameters and using gradient descent of the MeanSquareError cost
 
 ## Dataset 2.
 
-A visialization of the data provided:
+A visualization of the data provided:
 
 <p align="center">
   <img width="350"  src="./figures/figureinitial_2.png">
@@ -41,24 +41,25 @@ A visialization of the data provided:
 iterations = 500000
 learn_rate = 0.0011
 ```
-A logistic linear model was selected because the predictions to be generated should be discreet.
+In this dataset, I applied a logistic linear model because the predictions to be generated should be discreet. The prediction is converted to probabilities through the sigmoid function.
+
 <p align="center">
   <img width="350"  src="./figures/logistic.png">
 </p>
-I used the above hyper-parameters and obtained the following cost curve and decision boundary
+With the above hyper-parameters I ran the gradient descent algorithm and obtained the following cost curve and decision boundary
 
 <p align="center">
   <img width="350"  src="./figures/firstcost_2.png">
   <img width="350"  src="./figures/firstresult_2.png">
 </p>
 
-However, as the data polynomial, I expanded the input feature-set to include 5 degrees. I also normalzied the input space to the standard deviation of the input. This, enabled us to have lower iterations and a higher training rate:
+To improve on the previous prediction, I expanded the input feature-set to include polynomials up to 5 degrees. In addition, I also normalzied the input space by subtracting the mean and dividing by the standard deviation of the input. This, enabled us to have lower iterations and a higher training rate:
 
 ```
 iterations = 50000
 learn_rate = 0.1
 ```
-Todo: Fix the shifting of prediction.
+
 <p align="center">
   <img width="350"  src="./figures/firstcost_3.png">
   <img width="350"  src="./figures/firstresult_3.png">
@@ -73,7 +74,7 @@ A visialization of the data provided:
   <img width="350"  src="./figures/figureinitial_5.png">
 </p>
 
-A polynomial logistic linear regression model was created due to the polynomial and discreet nature of the data.
+In the third dataset, I also used a polynomial logistic linear regression model due to the polynomial and discreet nature of the data.
 
 ```
 poly_count = 10
@@ -92,9 +93,12 @@ The results and cost curve:
 </p>
 
 We observed that there was a lot of overfitting. So we introduced L2 regularization to our model. The following cross entropy cost equation was used.
+
 <p align="center">
   <img width="600"  src="./figures/crossentropy.png">
 </p>
+
+Regularization enables us to penalize large theta values which often enable the model to overfit. By regularizing, we force the model to use less theta values, and so more general feature selections.
 
 ```
 poly_count = 10

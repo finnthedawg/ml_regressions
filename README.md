@@ -1,17 +1,19 @@
 #  ml_regressions
 
----
+### Experiments in linear, logistic, polynomial regression and regularization
 
-## Experiments in linear, logistic, polynomial regression and regularization
-
----
+To execute the project, simply
+```
+git clone
+jupyter notebook Linear regression.ipynb
+```
 
 ## Dataset 1.
 
 A visialization of the data provided:
 
 <p align="center">
-  <img width="350"  src="/figures/figureinitial.png">
+  <img width="350"  src="/figures/Figureinitial.png">
 </p>
 
 ```
@@ -38,7 +40,11 @@ A visialization of the data provided:
 iterations = 500000
 learn_rate = 0.0011
 ```
-A logistic linear model was selected because the predictions to be generated should be discreet. I used the above hyper-parameters and obtained the following cost curve and decision boundary
+A logistic linear model was selected because the predictions to be generated should be discreet.
+<p align="center">
+  <img width="250"  src="/figures/logistic.png">
+</p>
+I used the above hyper-parameters and obtained the following cost curve and decision boundary
 
 <p align="center">
   <img width="350"  src="/figures/firstcost_2.png">
@@ -84,7 +90,10 @@ The results and cost curve:
   <img width="350"  src="/figures/firstresult_4.png">
 </p>
 
-We observed that there was a lot of overfitting. So we introduced L2 regularization to our model.
+We observed that there was a lot of overfitting. So we introduced L2 regularization to our model. The following cross entropy cost equation was used.
+<p align="center">
+  <img width="600"  src="/figures/crossentropy.png">
+</p>
 
 ```
 poly_count = 10
